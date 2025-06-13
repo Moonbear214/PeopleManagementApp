@@ -1,3 +1,28 @@
+# Brief implementation Explenation
+
+The backend for this solution was developed using .NET 8, following Clean Architecture. This pattern was chosen to create a system that is easily testable and maintainable by separating the application into distinct layers.
+
+## The Dependency Rule
+
+A key principle of this architecture is that dependencies must always flow inward. The outer layers can depend on inner layers, but the inner layers know nothing about the outer ones. This ensures our core business logic (Application) is independent of the Api layer and the database (Infrastructure).
+
+## Project Structure Breakdown
+
+The solution is split into the following projects:
+
+### 1. CoFloPeopleManagement.Infrastructure
+
+This contains the core domain entities, the AppDbContext, and the data access logic.
+
+### 2. CoFloPeopleManagement.Application
+
+This contains the core business logic. It defines the DTOs and contains the PeopleService, which orchestrates the application's operations.
+
+### 3. CoFloPeopleManagement.Api
+
+This is the entry point of the application, responsible for handling all HTTP requests and responses.
+
+
 # How to Deploy CoFlo Management Solution
 
 This solution supports two primary deployment methods:
